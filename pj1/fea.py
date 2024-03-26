@@ -2,6 +2,7 @@ from Bio.PDB import PDBParser
 import os
 import numpy as np
 
+
 # https://biopython.org/docs/1.75/api/Bio.PDB.Atom.html
 
 def feature_extraction():
@@ -21,7 +22,7 @@ def feature_extraction():
     atom_names_sorted = sorted(list(all_atom_names))
 
     print("Atom names:", atom_names_sorted)
-    
+
     # 初始化一个空的NumPy矩阵
     atom_matrix = np.zeros((len(file_names), len(atom_names_sorted)))
 
@@ -30,20 +31,21 @@ def feature_extraction():
         structure_id = os.path.splitext(file)[0]
         structure = parser.get_structure(structure_id, "./data/SCOP40mini/" + file)
         atom_counts = dict.fromkeys(atom_names_sorted, 0)
-        
+
         for atom in structure.get_atoms():
             atom_counts[atom.get_name()] += 1
-        
+
         # 更新矩阵
         for atom_index, atom_name in enumerate(atom_names_sorted):
             atom_matrix[file_index, atom_index] = atom_counts[atom_name]
 
         if (file_index + 1) % 100 == 0:
             print(f"Processed file {file_index + 1} of {len(file_names)}")
-        
+
     print("Feature extraction completed.")  # 打印函数完成消息
 
     return atom_matrix, atom_names_sorted
+
 
 if __name__ == "__main__":
     # 调用函数并获取返回的矩阵和原子名称列表
