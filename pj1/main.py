@@ -1,4 +1,5 @@
 import argparse
+import time
 
 import numpy as np
 import pandas as pd
@@ -142,11 +143,13 @@ def main(args):
         else:
             raise ValueError("Unsupported model type")
 
+    start_time = time.time()
+
     for i in range(len(data_list)):
         train_data, test_data = data_list[i]
         train_targets, test_targets = target_list[i]
 
-        print(f"Processing dataset {i + 1}/{len(data_list)}")
+        # print(f"Processing dataset {i + 1}/{len(data_list)}")
 
         # Train the model
         model.train(train_data, train_targets)
@@ -160,8 +163,12 @@ def main(args):
         task_acc_train.append(train_accuracy)
         task_acc_test.append(test_accuracy)
 
+    print(args.model_type + ' - ' + args.kernel)
+
     print("Training accuracy:", sum(task_acc_train) / len(task_acc_train))
     print("Testing accuracy:", sum(task_acc_test) / len(task_acc_test))
+
+    print("Time taken:", time.time() - start_time)
 
 
 if __name__ == "__main__":
@@ -171,6 +178,7 @@ if __name__ == "__main__":
                         help="Kernel type")
     parser.add_argument('--C', type=float, default=20, help="Regularization parameter")
     parser.add_argument('--ent', action='store_true',
-                        help="Load data from a file using a feature engineering function feature_extraction() from fea.py")
+                        help="Load data from a file using a feature engineering function feature_extraction() from "
+                             "fea.py")
     args = parser.parse_args()
     main(args)
