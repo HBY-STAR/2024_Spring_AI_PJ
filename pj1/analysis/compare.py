@@ -7,7 +7,7 @@ import numpy as np
 label = ['SVM-poly', 'SVM-rbf', 'SVM-sigmoid', 'LinearSVM', 'LR']
 train_acc = [0.9027, 0.9022, 0.8650, 0.7927, 0.9021]
 test_acc = [0.9774, 0.9782, 0.9267, 0.8506, 0.9732]
-
+ 
 x = np.arange(len(label))
 width = 0.35
 

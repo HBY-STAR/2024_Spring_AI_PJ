@@ -53,6 +53,7 @@ if __name__ == "__main__":
 
     # 打印结果以验证
     print("Atom names:", atom_names_sorted)
+    print("Matrix", atom_matrix)
     print("Matrix shape:", atom_matrix.shape)
 
     # 打印矩阵的一小部分或特定行列以查看具体值
