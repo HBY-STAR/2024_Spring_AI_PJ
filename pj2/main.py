@@ -1,17 +1,17 @@
 # Importing Libraries
+import os
+import sys
+
+import matplotlib.pyplot as plt
 import torch
-import torchvision
-import torchvision.transforms as transforms
-from torchsummary import summary
 import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
-from torch.optim.lr_scheduler import StepLR, ReduceLROnPlateau
-import numpy as np
-import matplotlib.pyplot as plt
+import torchvision
+from torch.optim.lr_scheduler import ReduceLROnPlateau
+from torchsummary import summary
 from torchvision import datasets
 from torchvision import transforms
-import os
 from tqdm import tqdm
 
 
@@ -100,16 +100,15 @@ def model_training(model, device, train_dataloader, optimizer, train_acc, train_
 
     for batch_idx, (data, target) in enumerate(pbar):
         data, target = data.to(device), target.to(device)
-        # TODO,补全代码,填在下方
 
+        # TODO
         # 补全内容:optimizer的操作，获取模型输出，loss设计与计算，反向传播
         optimizer.zero_grad()
         y_pred = model(data)
+        # 由于已经计算了log_softmax，所以这里使用nll_loss
         loss = F.nll_loss(y_pred, target)
         loss.backward()
         optimizer.step()
-
-        # TODO,补全代码,填在上方
 
         train_losses.append(loss.item())
         pred = y_pred.argmax(dim=1, keepdim=True)
@@ -132,14 +131,10 @@ def model_testing(model, device, test_dataloader, test_acc, test_losses, misclas
         for index, (data, target) in enumerate(test_dataloader):
             data, target = data.to(device), target.to(device)
 
-            # TODO,补全代码,填在下方
-
-            # 补全内容:获取模型输出，loss计算
-
+            # TODO
+            # 补全内容:获取模型输出，loss设计与计算
             output = model(data)
             test_loss += F.nll_loss(output, target, reduction='sum').item()
-
-            # TODO,补全代码,填在上方
 
             pred = output.argmax(dim=1, keepdim=True)
             correct += pred.eq(target.view_as(pred)).sum().item()
@@ -159,7 +154,16 @@ def main():
 
     # prepare datasets and transforms
     train_transforms = transforms.Compose([
+
         # TODO,设计针对训练数据集的图像增强
+        # https://pytorch.org/vision/0.9/transforms.html
+        # 50%的概率对图像进行水平翻转
+        torchvision.transforms.RandomHorizontalFlip(),
+        # 随机旋转角度范围为-10到10度
+        transforms.RandomRotation(10),
+        # 随机裁剪图像，裁剪后的图像大小为原图像的0.9到1之间
+        transforms.RandomResizedCrop(32, scale=(0.9, 1.0), ratio=(0.9, 1.1)),
+
         transforms.ToTensor(),  # comvert the image to tensor so that it can work with torch
         transforms.Normalize((0.491, 0.482, 0.446), (0.247, 0.243, 0.261))  # Normalize all the images
     ])
@@ -200,10 +204,8 @@ def main():
 
     for i in range(EPOCHS):
         print(f'EPOCHS : {i}')
-        # TODO,补全model_training里的代码
         model_training(model, device, trainloader, optimizer, train_acc, train_losses)
         scheduler.step(train_losses[-1])
-        # TODO,补全model_testing里的代码
         model_testing(model, device, testloader, test_acc, test_losses)
 
         # 保存模型权重
@@ -226,4 +228,9 @@ def main():
 
 
 if __name__ == '__main__':
+    log_file = open("result.log", "w")
+    original_stdout = sys.stdout
+    sys.stdout = log_file
     main()
+    sys.stdout = original_stdout
+    log_file.close()
