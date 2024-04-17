@@ -1,8 +1,11 @@
 # Importing Libraries
 import os
+import random
 import sys
+import time
 
 import matplotlib.pyplot as plt
+import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -15,78 +18,19 @@ from torchvision import transforms
 from tqdm import tqdm
 
 
-# Define the model, here we take resnet-18 as an example
-
-class BasicBlock(nn.Module):
-    expansion = 1
-
-    def __init__(self, in_planes, planes, stride=1):
-        super(BasicBlock, self).__init__()
-
-        DROPOUT = 0.1
-
-        self.conv1 = nn.Conv2d(
-            in_planes, planes, kernel_size=3, stride=stride, padding=1, bias=False)
-        self.bn1 = nn.BatchNorm2d(planes)
-        self.dropout = nn.Dropout(DROPOUT)
-        self.conv2 = nn.Conv2d(planes, planes, kernel_size=3,
-                               stride=1, padding=1, bias=False)
-        self.bn2 = nn.BatchNorm2d(planes)
-        self.dropout = nn.Dropout(DROPOUT)
-
-        self.shortcut = nn.Sequential()
-        if stride != 1 or in_planes != self.expansion * planes:
-            self.shortcut = nn.Sequential(
-                nn.Conv2d(in_planes, self.expansion * planes,
-                          kernel_size=1, stride=stride, bias=False),
-                nn.BatchNorm2d(self.expansion * planes),
-                nn.Dropout(DROPOUT)
-            )
-
-    def forward(self, x):
-        out = F.relu(self.dropout(self.bn1(self.conv1(x))))
-        out = self.dropout(self.bn2(self.conv2(out)))
-        out += self.shortcut(x)
-        out = F.relu(out)
-        return out
-
-
-class ResNet(nn.Module):
-    def __init__(self, block, num_blocks, num_classes=10):
-        super(ResNet, self).__init__()
-        self.in_planes = 64
-
-        self.conv1 = nn.Conv2d(3, 64, kernel_size=3,
-                               stride=1, padding=1, bias=False)
-        self.bn1 = nn.BatchNorm2d(64)
-        self.layer1 = self._make_layer(block, 64, num_blocks[0], stride=1)
-        self.layer2 = self._make_layer(block, 128, num_blocks[1], stride=2)
-        self.layer3 = self._make_layer(block, 256, num_blocks[2], stride=2)
-        self.layer4 = self._make_layer(block, 512, num_blocks[3], stride=2)
-        self.linear = nn.Linear(512 * block.expansion, num_classes)
-
-    def _make_layer(self, block, planes, num_blocks, stride):
-        strides = [stride] + [1] * (num_blocks - 1)
-        layers = []
-        for stride in strides:
-            layers.append(block(self.in_planes, planes, stride))
-            self.in_planes = planes * block.expansion
-        return nn.Sequential(*layers)
-
-    def forward(self, x):
-        out = F.relu(self.bn1(self.conv1(x)))
-        out = self.layer1(out)
-        out = self.layer2(out)
-        out = self.layer3(out)
-        out = self.layer4(out)
-        out = F.avg_pool2d(out, 4)
-        out = out.view(out.size(0), -1)
-        out = self.linear(out)
-        return F.log_softmax(out, dim=-1)
-
-
-def design_model():
-    return ResNet(BasicBlock, [2, 2, 2, 2])
+def design_model(cnn_model):
+    # https://pytorch.org/vision/main/models.html#classification
+    if cnn_model == 'ResNet-18':
+        return torchvision.models.resnet18()
+        # return ResNet(BasicBlock, [2, 2, 2, 2])
+    elif cnn_model == 'AlexNet':
+        return torchvision.models.alexnet()
+    elif cnn_model == 'VGG':
+        return torchvision.models.vgg16()
+    elif cnn_model == 'MobileNet-V3-Small':
+        return torchvision.models.mobilenet_v3_small()
+    else:
+        exit('Model not supported')
 
 
 # 训练代码
@@ -105,8 +49,7 @@ def model_training(model, device, train_dataloader, optimizer, train_acc, train_
         # 补全内容:optimizer的操作，获取模型输出，loss设计与计算，反向传播
         optimizer.zero_grad()
         y_pred = model(data)
-        # 由于已经计算了log_softmax，所以这里使用nll_loss
-        loss = F.nll_loss(y_pred, target)
+        loss = F.cross_entropy(y_pred, target)
         loss.backward()
         optimizer.step()
 
@@ -132,9 +75,9 @@ def model_testing(model, device, test_dataloader, test_acc, test_losses, misclas
             data, target = data.to(device), target.to(device)
 
             # TODO
-            # 补全内容:获取模型输出，loss设计与计算
+            # 补全内容:获取模型输出，loss计算
             output = model(data)
-            test_loss += F.nll_loss(output, target, reduction='sum').item()
+            test_loss += F.cross_entropy(output, target, reduction='sum').item()
 
             pred = output.argmax(dim=1, keepdim=True)
             correct += pred.eq(target.view_as(pred)).sum().item()
@@ -148,26 +91,26 @@ def model_testing(model, device, test_dataloader, test_acc, test_losses, misclas
     test_acc.append(100. * correct / len(test_dataloader.dataset))
 
 
-def main():
+def main(cnn_model):
     device = "cuda" if torch.cuda.is_available() else "cpu"
     print(device)
 
     # prepare datasets and transforms
     train_transforms = transforms.Compose([
-
-        # TODO,设计针对训练数据集的图像增强
         # https://pytorch.org/vision/0.9/transforms.html
         # 50%的概率对图像进行水平翻转
-        torchvision.transforms.RandomHorizontalFlip(),
+        # torchvision.transforms.RandomHorizontalFlip(),
         # 随机旋转角度范围为-10到10度
-        transforms.RandomRotation(10),
+        # transforms.RandomRotation(10),
         # 随机裁剪图像，裁剪后的图像大小为原图像的0.9到1之间
-        transforms.RandomResizedCrop(32, scale=(0.9, 1.0), ratio=(0.9, 1.1)),
+        # transforms.RandomResizedCrop(32, scale=(0.9, 1.0), ratio=(0.9, 1.1)),
 
+        transforms.Resize((224, 224)),
         transforms.ToTensor(),  # comvert the image to tensor so that it can work with torch
         transforms.Normalize((0.491, 0.482, 0.446), (0.247, 0.243, 0.261))  # Normalize all the images
     ])
     test_transforms = transforms.Compose([
+        transforms.Resize((224, 224)),
         transforms.ToTensor(),
         transforms.Normalize((0.491, 0.482, 0.446), (0.247, 0.243, 0.261))
     ])
@@ -176,20 +119,20 @@ def main():
     trainset = datasets.CIFAR10(data_dir, train=True, download=True, transform=train_transforms)
     testset = datasets.CIFAR10(data_dir, train=False, download=True, transform=test_transforms)
 
-    trainloader = torch.utils.data.DataLoader(trainset, batch_size=512,
+    trainloader = torch.utils.data.DataLoader(trainset, batch_size=32,
                                               shuffle=True, num_workers=4)
-    testloader = torch.utils.data.DataLoader(testset, batch_size=512,
+    testloader = torch.utils.data.DataLoader(testset, batch_size=32,
                                              shuffle=False, num_workers=4)
 
     # Importing Model and printing Summary,默认是ResNet-18
     # TODO,分析讨论其他的CNN网络设计
 
-    model = design_model().to(device)
-    summary(model, input_size=(3, 32, 32))
+    model = design_model(cnn_model).to(device)
+    summary(model, input_size=(3, 224, 224))
 
     # Training the model
 
-    optimizer = optim.SGD(model.parameters(), lr=0.05, momentum=0.9)
+    optimizer = optim.SGD(model.parameters(), lr=0.01, momentum=0.9)
     scheduler = ReduceLROnPlateau(optimizer, mode='min', factor=0.05, patience=2, threshold=0.0001,
                                   threshold_mode='rel', cooldown=0, min_lr=0, eps=1e-08, verbose=True)
 
@@ -200,6 +143,8 @@ def main():
     model_path = './checkpoints'
     os.makedirs(model_path, exist_ok=True)
 
+    print(f'Running with Model: {cnn_model}')
+
     EPOCHS = 40
 
     for i in range(EPOCHS):
@@ -209,28 +154,44 @@ def main():
         model_testing(model, device, testloader, test_acc, test_losses)
 
         # 保存模型权重
-        torch.save(model.state_dict(), os.path.join(model_path, 'model.pth'))
+        torch.save(model.state_dict(), os.path.join(model_path, cnn_model + '_' + 'model.pth'))
 
-    fig, axs = plt.subplots(2, 2, figsize=(25, 20))
-
-    axs[0, 0].set_title('Train Losses')
-    axs[0, 1].set_title(f'Training Accuracy (Max: {max(train_acc):.2f})')
-    axs[1, 0].set_title('Test Losses')
-    axs[1, 1].set_title(f'Test Accuracy (Max: {max(test_acc):.2f})')
-
-    axs[0, 0].plot(train_losses)
-    axs[0, 1].plot(train_acc)
-    axs[1, 0].plot(test_losses)
-    axs[1, 1].plot(test_acc)
-
-    # 保存图像
-    plt.savefig('curves.png')  # 保存为名为 'plot.png' 的图片文件
+    return max(test_acc)
 
 
 if __name__ == '__main__':
-    log_file = open("result.log", "w")
+
+    models = ['ResNet-18', 'AlexNet', 'MobileNet-V3-Small', 'VGG']
+    log_file = open("result_models.log", "w")
     original_stdout = sys.stdout
     sys.stdout = log_file
-    main()
+
+    test_acc = []
+    run_time = []
+
+    for model in models:
+        start = time.time()
+        temp = main(model)
+        end = time.time()
+        print(f'Model: {model}, Test Accuracy: {temp:.2f}, Run Time: {end - start:.2f}')
+        test_acc.append(temp)
+        run_time.append(end - start)
+
+    # 使用柱状图分别展示不同模型的准确率和运行时间
+    fig, axs = plt.subplots(2, 1, figsize=(10, 10))
+
+    axs[0].bar(models, test_acc)
+    axs[0].set_title('Test Accuracy')
+    axs[0].set_xlabel('Model')
+    axs[0].set_ylabel('Accuracy (%)')
+
+    axs[1].bar(models, run_time)
+    axs[1].set_title('Run Time')
+    axs[1].set_xlabel('Model')
+    axs[1].set_ylabel('Time (s)')
+
+    plt.show()
+    plt.savefig('result_models.png')
+
     sys.stdout = original_stdout
     log_file.close()
