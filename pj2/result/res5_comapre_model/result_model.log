@@ -1,0 +1,1022 @@
+cuda
+Files already downloaded and verified
+Files already downloaded and verified
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1         [-1, 64, 112, 112]           9,408
+       BatchNorm2d-2         [-1, 64, 112, 112]             128
+              ReLU-3         [-1, 64, 112, 112]               0
+         MaxPool2d-4           [-1, 64, 56, 56]               0
+            Conv2d-5           [-1, 64, 56, 56]          36,864
+       BatchNorm2d-6           [-1, 64, 56, 56]             128
+              ReLU-7           [-1, 64, 56, 56]               0
+            Conv2d-8           [-1, 64, 56, 56]          36,864
+       BatchNorm2d-9           [-1, 64, 56, 56]             128
+             ReLU-10           [-1, 64, 56, 56]               0
+       BasicBlock-11           [-1, 64, 56, 56]               0
+           Conv2d-12           [-1, 64, 56, 56]          36,864
+      BatchNorm2d-13           [-1, 64, 56, 56]             128
+             ReLU-14           [-1, 64, 56, 56]               0
+           Conv2d-15           [-1, 64, 56, 56]          36,864
+      BatchNorm2d-16           [-1, 64, 56, 56]             128
+             ReLU-17           [-1, 64, 56, 56]               0
+       BasicBlock-18           [-1, 64, 56, 56]               0
+           Conv2d-19          [-1, 128, 28, 28]          73,728
+      BatchNorm2d-20          [-1, 128, 28, 28]             256
+             ReLU-21          [-1, 128, 28, 28]               0
+           Conv2d-22          [-1, 128, 28, 28]         147,456
+      BatchNorm2d-23          [-1, 128, 28, 28]             256
+           Conv2d-24          [-1, 128, 28, 28]           8,192
+      BatchNorm2d-25          [-1, 128, 28, 28]             256
+             ReLU-26          [-1, 128, 28, 28]               0
+       BasicBlock-27          [-1, 128, 28, 28]               0
+           Conv2d-28          [-1, 128, 28, 28]         147,456
+      BatchNorm2d-29          [-1, 128, 28, 28]             256
+             ReLU-30          [-1, 128, 28, 28]               0
+           Conv2d-31          [-1, 128, 28, 28]         147,456
+      BatchNorm2d-32          [-1, 128, 28, 28]             256
+             ReLU-33          [-1, 128, 28, 28]               0
+       BasicBlock-34          [-1, 128, 28, 28]               0
+           Conv2d-35          [-1, 256, 14, 14]         294,912
+      BatchNorm2d-36          [-1, 256, 14, 14]             512
+             ReLU-37          [-1, 256, 14, 14]               0
+           Conv2d-38          [-1, 256, 14, 14]         589,824
+      BatchNorm2d-39          [-1, 256, 14, 14]             512
+           Conv2d-40          [-1, 256, 14, 14]          32,768
+      BatchNorm2d-41          [-1, 256, 14, 14]             512
+             ReLU-42          [-1, 256, 14, 14]               0
+       BasicBlock-43          [-1, 256, 14, 14]               0
+           Conv2d-44          [-1, 256, 14, 14]         589,824
+      BatchNorm2d-45          [-1, 256, 14, 14]             512
+             ReLU-46          [-1, 256, 14, 14]               0
+           Conv2d-47          [-1, 256, 14, 14]         589,824
+      BatchNorm2d-48          [-1, 256, 14, 14]             512
+             ReLU-49          [-1, 256, 14, 14]               0
+       BasicBlock-50          [-1, 256, 14, 14]               0
+           Conv2d-51            [-1, 512, 7, 7]       1,179,648
+      BatchNorm2d-52            [-1, 512, 7, 7]           1,024
+             ReLU-53            [-1, 512, 7, 7]               0
+           Conv2d-54            [-1, 512, 7, 7]       2,359,296
+      BatchNorm2d-55            [-1, 512, 7, 7]           1,024
+           Conv2d-56            [-1, 512, 7, 7]         131,072
+      BatchNorm2d-57            [-1, 512, 7, 7]           1,024
+             ReLU-58            [-1, 512, 7, 7]               0
+       BasicBlock-59            [-1, 512, 7, 7]               0
+           Conv2d-60            [-1, 512, 7, 7]       2,359,296
+      BatchNorm2d-61            [-1, 512, 7, 7]           1,024
+             ReLU-62            [-1, 512, 7, 7]               0
+           Conv2d-63            [-1, 512, 7, 7]       2,359,296
+      BatchNorm2d-64            [-1, 512, 7, 7]           1,024
+             ReLU-65            [-1, 512, 7, 7]               0
+       BasicBlock-66            [-1, 512, 7, 7]               0
+AdaptiveAvgPool2d-67            [-1, 512, 1, 1]               0
+           Linear-68                 [-1, 1000]         513,000
+================================================================
+Total params: 11,689,512
+Trainable params: 11,689,512
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.57
+Forward/backward pass size (MB): 62.79
+Params size (MB): 44.59
+Estimated Total Size (MB): 107.96
+----------------------------------------------------------------
+Running with Model: ResNet-18
+EPOCHS : 0
+
+Test set: Average loss: 1.0230, Accuracy: 6360/10000 (63.60%)
+
+EPOCHS : 1
+
+Test set: Average loss: 0.7169, Accuracy: 7570/10000 (75.70%)
+
+EPOCHS : 2
+
+Test set: Average loss: 0.7472, Accuracy: 7492/10000 (74.92%)
+
+EPOCHS : 3
+
+Test set: Average loss: 0.6985, Accuracy: 7738/10000 (77.38%)
+
+EPOCHS : 4
+
+Test set: Average loss: 0.5856, Accuracy: 8133/10000 (81.33%)
+
+EPOCHS : 5
+
+Test set: Average loss: 0.7105, Accuracy: 7867/10000 (78.67%)
+
+EPOCHS : 6
+
+Test set: Average loss: 0.6483, Accuracy: 8113/10000 (81.13%)
+
+EPOCHS : 7
+
+Test set: Average loss: 0.6882, Accuracy: 8177/10000 (81.77%)
+
+EPOCHS : 8
+
+Test set: Average loss: 0.8212, Accuracy: 8025/10000 (80.25%)
+
+EPOCHS : 9
+
+Test set: Average loss: 0.6867, Accuracy: 8369/10000 (83.69%)
+
+EPOCHS : 10
+
+Test set: Average loss: 0.7687, Accuracy: 8236/10000 (82.36%)
+
+EPOCHS : 11
+Epoch 00012: reducing learning rate of group 0 to 5.0000e-04.
+
+Test set: Average loss: 0.7698, Accuracy: 8331/10000 (83.31%)
+
+EPOCHS : 12
+
+Test set: Average loss: 0.6268, Accuracy: 8577/10000 (85.77%)
+
+EPOCHS : 13
+
+Test set: Average loss: 0.6067, Accuracy: 8576/10000 (85.76%)
+
+EPOCHS : 14
+
+Test set: Average loss: 0.6119, Accuracy: 8580/10000 (85.80%)
+
+EPOCHS : 15
+
+Test set: Average loss: 0.6087, Accuracy: 8591/10000 (85.91%)
+
+EPOCHS : 16
+Epoch 00017: reducing learning rate of group 0 to 2.5000e-05.
+
+Test set: Average loss: 0.6131, Accuracy: 8613/10000 (86.13%)
+
+EPOCHS : 17
+
+Test set: Average loss: 0.6013, Accuracy: 8623/10000 (86.23%)
+
+EPOCHS : 18
+
+Test set: Average loss: 0.6138, Accuracy: 8598/10000 (85.98%)
+
+EPOCHS : 19
+Epoch 00020: reducing learning rate of group 0 to 1.2500e-06.
+
+Test set: Average loss: 0.6136, Accuracy: 8606/10000 (86.06%)
+
+EPOCHS : 20
+
+Test set: Average loss: 0.6085, Accuracy: 8598/10000 (85.98%)
+
+EPOCHS : 21
+
+Test set: Average loss: 0.6221, Accuracy: 8605/10000 (86.05%)
+
+EPOCHS : 22
+Epoch 00023: reducing learning rate of group 0 to 6.2500e-08.
+
+Test set: Average loss: 0.6069, Accuracy: 8615/10000 (86.15%)
+
+EPOCHS : 23
+
+Test set: Average loss: 0.6046, Accuracy: 8607/10000 (86.07%)
+
+EPOCHS : 24
+
+Test set: Average loss: 0.6028, Accuracy: 8612/10000 (86.12%)
+
+EPOCHS : 25
+
+Test set: Average loss: 0.6105, Accuracy: 8608/10000 (86.08%)
+
+EPOCHS : 26
+
+Test set: Average loss: 0.6056, Accuracy: 8586/10000 (85.86%)
+
+EPOCHS : 27
+Epoch 00028: reducing learning rate of group 0 to 3.1250e-09.
+
+Test set: Average loss: 0.6081, Accuracy: 8610/10000 (86.10%)
+
+EPOCHS : 28
+
+Test set: Average loss: 0.6103, Accuracy: 8596/10000 (85.96%)
+
+EPOCHS : 29
+
+Test set: Average loss: 0.6105, Accuracy: 8606/10000 (86.06%)
+
+EPOCHS : 30
+
+Test set: Average loss: 0.6029, Accuracy: 8602/10000 (86.02%)
+
+EPOCHS : 31
+
+Test set: Average loss: 0.6151, Accuracy: 8600/10000 (86.00%)
+
+EPOCHS : 32
+
+Test set: Average loss: 0.6029, Accuracy: 8612/10000 (86.12%)
+
+EPOCHS : 33
+
+Test set: Average loss: 0.6115, Accuracy: 8592/10000 (85.92%)
+
+EPOCHS : 34
+
+Test set: Average loss: 0.6066, Accuracy: 8623/10000 (86.23%)
+
+EPOCHS : 35
+
+Test set: Average loss: 0.6081, Accuracy: 8614/10000 (86.14%)
+
+EPOCHS : 36
+
+Test set: Average loss: 0.6030, Accuracy: 8603/10000 (86.03%)
+
+EPOCHS : 37
+
+Test set: Average loss: 0.6070, Accuracy: 8606/10000 (86.06%)
+
+EPOCHS : 38
+
+Test set: Average loss: 0.6034, Accuracy: 8605/10000 (86.05%)
+
+EPOCHS : 39
+
+Test set: Average loss: 0.6157, Accuracy: 8592/10000 (85.92%)
+
+Model: ResNet-18, Test Accuracy: 86.23, Run Time: 8170.24
+cuda
+Files already downloaded and verified
+Files already downloaded and verified
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1           [-1, 64, 55, 55]          23,296
+              ReLU-2           [-1, 64, 55, 55]               0
+         MaxPool2d-3           [-1, 64, 27, 27]               0
+            Conv2d-4          [-1, 192, 27, 27]         307,392
+              ReLU-5          [-1, 192, 27, 27]               0
+         MaxPool2d-6          [-1, 192, 13, 13]               0
+            Conv2d-7          [-1, 384, 13, 13]         663,936
+              ReLU-8          [-1, 384, 13, 13]               0
+            Conv2d-9          [-1, 256, 13, 13]         884,992
+             ReLU-10          [-1, 256, 13, 13]               0
+           Conv2d-11          [-1, 256, 13, 13]         590,080
+             ReLU-12          [-1, 256, 13, 13]               0
+        MaxPool2d-13            [-1, 256, 6, 6]               0
+AdaptiveAvgPool2d-14            [-1, 256, 6, 6]               0
+          Dropout-15                 [-1, 9216]               0
+           Linear-16                 [-1, 4096]      37,752,832
+             ReLU-17                 [-1, 4096]               0
+          Dropout-18                 [-1, 4096]               0
+           Linear-19                 [-1, 4096]      16,781,312
+             ReLU-20                 [-1, 4096]               0
+           Linear-21                 [-1, 1000]       4,097,000
+================================================================
+Total params: 61,100,840
+Trainable params: 61,100,840
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.57
+Forward/backward pass size (MB): 8.38
+Params size (MB): 233.08
+Estimated Total Size (MB): 242.03
+----------------------------------------------------------------
+Running with Model: AlexNet
+EPOCHS : 0
+
+Test set: Average loss: 1.5803, Accuracy: 4202/10000 (42.02%)
+
+EPOCHS : 1
+
+Test set: Average loss: 1.2739, Accuracy: 5444/10000 (54.44%)
+
+EPOCHS : 2
+
+Test set: Average loss: 1.1382, Accuracy: 6057/10000 (60.57%)
+
+EPOCHS : 3
+
+Test set: Average loss: 0.9454, Accuracy: 6733/10000 (67.33%)
+
+EPOCHS : 4
+
+Test set: Average loss: 0.9223, Accuracy: 6871/10000 (68.71%)
+
+EPOCHS : 5
+
+Test set: Average loss: 0.8615, Accuracy: 7131/10000 (71.31%)
+
+EPOCHS : 6
+
+Test set: Average loss: 0.8392, Accuracy: 7167/10000 (71.67%)
+
+EPOCHS : 7
+
+Test set: Average loss: 0.8396, Accuracy: 7159/10000 (71.59%)
+
+EPOCHS : 8
+Epoch 00009: reducing learning rate of group 0 to 5.0000e-04.
+
+Test set: Average loss: 0.8290, Accuracy: 7253/10000 (72.53%)
+
+EPOCHS : 9
+
+Test set: Average loss: 0.6223, Accuracy: 7903/10000 (79.03%)
+
+EPOCHS : 10
+
+Test set: Average loss: 0.6016, Accuracy: 8008/10000 (80.08%)
+
+EPOCHS : 11
+
+Test set: Average loss: 0.5904, Accuracy: 8028/10000 (80.28%)
+
+EPOCHS : 12
+Epoch 00013: reducing learning rate of group 0 to 2.5000e-05.
+
+Test set: Average loss: 0.5931, Accuracy: 8031/10000 (80.31%)
+
+EPOCHS : 13
+
+Test set: Average loss: 0.5878, Accuracy: 8046/10000 (80.46%)
+
+EPOCHS : 14
+
+Test set: Average loss: 0.5867, Accuracy: 8057/10000 (80.57%)
+
+EPOCHS : 15
+
+Test set: Average loss: 0.5870, Accuracy: 8059/10000 (80.59%)
+
+EPOCHS : 16
+
+Test set: Average loss: 0.5866, Accuracy: 8058/10000 (80.58%)
+
+EPOCHS : 17
+
+Test set: Average loss: 0.5868, Accuracy: 8065/10000 (80.65%)
+
+EPOCHS : 18
+
+Test set: Average loss: 0.5869, Accuracy: 8064/10000 (80.64%)
+
+EPOCHS : 19
+
+Test set: Average loss: 0.5872, Accuracy: 8066/10000 (80.66%)
+
+EPOCHS : 20
+
+Test set: Average loss: 0.5866, Accuracy: 8070/10000 (80.70%)
+
+EPOCHS : 21
+
+Test set: Average loss: 0.5866, Accuracy: 8070/10000 (80.70%)
+
+EPOCHS : 22
+
+Test set: Average loss: 0.5860, Accuracy: 8066/10000 (80.66%)
+
+EPOCHS : 23
+Epoch 00024: reducing learning rate of group 0 to 1.2500e-06.
+
+Test set: Average loss: 0.5871, Accuracy: 8074/10000 (80.74%)
+
+EPOCHS : 24
+
+Test set: Average loss: 0.5871, Accuracy: 8074/10000 (80.74%)
+
+EPOCHS : 25
+
+Test set: Average loss: 0.5870, Accuracy: 8074/10000 (80.74%)
+
+EPOCHS : 26
+Epoch 00027: reducing learning rate of group 0 to 6.2500e-08.
+
+Test set: Average loss: 0.5870, Accuracy: 8075/10000 (80.75%)
+
+EPOCHS : 27
+
+Test set: Average loss: 0.5870, Accuracy: 8074/10000 (80.74%)
+
+EPOCHS : 28
+
+Test set: Average loss: 0.5870, Accuracy: 8074/10000 (80.74%)
+
+EPOCHS : 29
+Epoch 00030: reducing learning rate of group 0 to 3.1250e-09.
+
+Test set: Average loss: 0.5870, Accuracy: 8074/10000 (80.74%)
+
+EPOCHS : 30
+
+Test set: Average loss: 0.5870, Accuracy: 8075/10000 (80.75%)
+
+EPOCHS : 31
+
+Test set: Average loss: 0.5870, Accuracy: 8074/10000 (80.74%)
+
+EPOCHS : 32
+
+Test set: Average loss: 0.5870, Accuracy: 8074/10000 (80.74%)
+
+EPOCHS : 33
+
+Test set: Average loss: 0.5870, Accuracy: 8074/10000 (80.74%)
+
+EPOCHS : 34
+
+Test set: Average loss: 0.5870, Accuracy: 8075/10000 (80.75%)
+
+EPOCHS : 35
+
+Test set: Average loss: 0.5870, Accuracy: 8075/10000 (80.75%)
+
+EPOCHS : 36
+
+Test set: Average loss: 0.5870, Accuracy: 8074/10000 (80.74%)
+
+EPOCHS : 37
+
+Test set: Average loss: 0.5870, Accuracy: 8075/10000 (80.75%)
+
+EPOCHS : 38
+
+Test set: Average loss: 0.5870, Accuracy: 8075/10000 (80.75%)
+
+EPOCHS : 39
+
+Test set: Average loss: 0.5870, Accuracy: 8075/10000 (80.75%)
+
+Model: AlexNet, Test Accuracy: 80.75, Run Time: 3523.40
+cuda
+Files already downloaded and verified
+Files already downloaded and verified
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1         [-1, 16, 112, 112]             432
+       BatchNorm2d-2         [-1, 16, 112, 112]              32
+         Hardswish-3         [-1, 16, 112, 112]               0
+            Conv2d-4           [-1, 16, 56, 56]             144
+       BatchNorm2d-5           [-1, 16, 56, 56]              32
+              ReLU-6           [-1, 16, 56, 56]               0
+ AdaptiveAvgPool2d-7             [-1, 16, 1, 1]               0
+            Conv2d-8              [-1, 8, 1, 1]             136
+              ReLU-9              [-1, 8, 1, 1]               0
+           Conv2d-10             [-1, 16, 1, 1]             144
+      Hardsigmoid-11             [-1, 16, 1, 1]               0
+SqueezeExcitation-12           [-1, 16, 56, 56]               0
+           Conv2d-13           [-1, 16, 56, 56]             256
+      BatchNorm2d-14           [-1, 16, 56, 56]              32
+ InvertedResidual-15           [-1, 16, 56, 56]               0
+           Conv2d-16           [-1, 72, 56, 56]           1,152
+      BatchNorm2d-17           [-1, 72, 56, 56]             144
+             ReLU-18           [-1, 72, 56, 56]               0
+           Conv2d-19           [-1, 72, 28, 28]             648
+      BatchNorm2d-20           [-1, 72, 28, 28]             144
+             ReLU-21           [-1, 72, 28, 28]               0
+           Conv2d-22           [-1, 24, 28, 28]           1,728
+      BatchNorm2d-23           [-1, 24, 28, 28]              48
+ InvertedResidual-24           [-1, 24, 28, 28]               0
+           Conv2d-25           [-1, 88, 28, 28]           2,112
+      BatchNorm2d-26           [-1, 88, 28, 28]             176
+             ReLU-27           [-1, 88, 28, 28]               0
+           Conv2d-28           [-1, 88, 28, 28]             792
+      BatchNorm2d-29           [-1, 88, 28, 28]             176
+             ReLU-30           [-1, 88, 28, 28]               0
+           Conv2d-31           [-1, 24, 28, 28]           2,112
+      BatchNorm2d-32           [-1, 24, 28, 28]              48
+ InvertedResidual-33           [-1, 24, 28, 28]               0
+           Conv2d-34           [-1, 96, 28, 28]           2,304
+      BatchNorm2d-35           [-1, 96, 28, 28]             192
+        Hardswish-36           [-1, 96, 28, 28]               0
+           Conv2d-37           [-1, 96, 14, 14]           2,400
+      BatchNorm2d-38           [-1, 96, 14, 14]             192
+        Hardswish-39           [-1, 96, 14, 14]               0
+AdaptiveAvgPool2d-40             [-1, 96, 1, 1]               0
+           Conv2d-41             [-1, 24, 1, 1]           2,328
+             ReLU-42             [-1, 24, 1, 1]               0
+           Conv2d-43             [-1, 96, 1, 1]           2,400
+      Hardsigmoid-44             [-1, 96, 1, 1]               0
+SqueezeExcitation-45           [-1, 96, 14, 14]               0
+           Conv2d-46           [-1, 40, 14, 14]           3,840
+      BatchNorm2d-47           [-1, 40, 14, 14]              80
+ InvertedResidual-48           [-1, 40, 14, 14]               0
+           Conv2d-49          [-1, 240, 14, 14]           9,600
+      BatchNorm2d-50          [-1, 240, 14, 14]             480
+        Hardswish-51          [-1, 240, 14, 14]               0
+           Conv2d-52          [-1, 240, 14, 14]           6,000
+      BatchNorm2d-53          [-1, 240, 14, 14]             480
+        Hardswish-54          [-1, 240, 14, 14]               0
+AdaptiveAvgPool2d-55            [-1, 240, 1, 1]               0
+           Conv2d-56             [-1, 64, 1, 1]          15,424
+             ReLU-57             [-1, 64, 1, 1]               0
+           Conv2d-58            [-1, 240, 1, 1]          15,600
+      Hardsigmoid-59            [-1, 240, 1, 1]               0
+SqueezeExcitation-60          [-1, 240, 14, 14]               0
+           Conv2d-61           [-1, 40, 14, 14]           9,600
+      BatchNorm2d-62           [-1, 40, 14, 14]              80
+ InvertedResidual-63           [-1, 40, 14, 14]               0
+           Conv2d-64          [-1, 240, 14, 14]           9,600
+      BatchNorm2d-65          [-1, 240, 14, 14]             480
+        Hardswish-66          [-1, 240, 14, 14]               0
+           Conv2d-67          [-1, 240, 14, 14]           6,000
+      BatchNorm2d-68          [-1, 240, 14, 14]             480
+        Hardswish-69          [-1, 240, 14, 14]               0
+AdaptiveAvgPool2d-70            [-1, 240, 1, 1]               0
+           Conv2d-71             [-1, 64, 1, 1]          15,424
+             ReLU-72             [-1, 64, 1, 1]               0
+           Conv2d-73            [-1, 240, 1, 1]          15,600
+      Hardsigmoid-74            [-1, 240, 1, 1]               0
+SqueezeExcitation-75          [-1, 240, 14, 14]               0
+           Conv2d-76           [-1, 40, 14, 14]           9,600
+      BatchNorm2d-77           [-1, 40, 14, 14]              80
+ InvertedResidual-78           [-1, 40, 14, 14]               0
+           Conv2d-79          [-1, 120, 14, 14]           4,800
+      BatchNorm2d-80          [-1, 120, 14, 14]             240
+        Hardswish-81          [-1, 120, 14, 14]               0
+           Conv2d-82          [-1, 120, 14, 14]           3,000
+      BatchNorm2d-83          [-1, 120, 14, 14]             240
+        Hardswish-84          [-1, 120, 14, 14]               0
+AdaptiveAvgPool2d-85            [-1, 120, 1, 1]               0
+           Conv2d-86             [-1, 32, 1, 1]           3,872
+             ReLU-87             [-1, 32, 1, 1]               0
+           Conv2d-88            [-1, 120, 1, 1]           3,960
+      Hardsigmoid-89            [-1, 120, 1, 1]               0
+SqueezeExcitation-90          [-1, 120, 14, 14]               0
+           Conv2d-91           [-1, 48, 14, 14]           5,760
+      BatchNorm2d-92           [-1, 48, 14, 14]              96
+ InvertedResidual-93           [-1, 48, 14, 14]               0
+           Conv2d-94          [-1, 144, 14, 14]           6,912
+      BatchNorm2d-95          [-1, 144, 14, 14]             288
+        Hardswish-96          [-1, 144, 14, 14]               0
+           Conv2d-97          [-1, 144, 14, 14]           3,600
+      BatchNorm2d-98          [-1, 144, 14, 14]             288
+        Hardswish-99          [-1, 144, 14, 14]               0
+AdaptiveAvgPool2d-100            [-1, 144, 1, 1]               0
+          Conv2d-101             [-1, 40, 1, 1]           5,800
+            ReLU-102             [-1, 40, 1, 1]               0
+          Conv2d-103            [-1, 144, 1, 1]           5,904
+     Hardsigmoid-104            [-1, 144, 1, 1]               0
+SqueezeExcitation-105          [-1, 144, 14, 14]               0
+          Conv2d-106           [-1, 48, 14, 14]           6,912
+     BatchNorm2d-107           [-1, 48, 14, 14]              96
+InvertedResidual-108           [-1, 48, 14, 14]               0
+          Conv2d-109          [-1, 288, 14, 14]          13,824
+     BatchNorm2d-110          [-1, 288, 14, 14]             576
+       Hardswish-111          [-1, 288, 14, 14]               0
+          Conv2d-112            [-1, 288, 7, 7]           7,200
+     BatchNorm2d-113            [-1, 288, 7, 7]             576
+       Hardswish-114            [-1, 288, 7, 7]               0
+AdaptiveAvgPool2d-115            [-1, 288, 1, 1]               0
+          Conv2d-116             [-1, 72, 1, 1]          20,808
+            ReLU-117             [-1, 72, 1, 1]               0
+          Conv2d-118            [-1, 288, 1, 1]          21,024
+     Hardsigmoid-119            [-1, 288, 1, 1]               0
+SqueezeExcitation-120            [-1, 288, 7, 7]               0
+          Conv2d-121             [-1, 96, 7, 7]          27,648
+     BatchNorm2d-122             [-1, 96, 7, 7]             192
+InvertedResidual-123             [-1, 96, 7, 7]               0
+          Conv2d-124            [-1, 576, 7, 7]          55,296
+     BatchNorm2d-125            [-1, 576, 7, 7]           1,152
+       Hardswish-126            [-1, 576, 7, 7]               0
+          Conv2d-127            [-1, 576, 7, 7]          14,400
+     BatchNorm2d-128            [-1, 576, 7, 7]           1,152
+       Hardswish-129            [-1, 576, 7, 7]               0
+AdaptiveAvgPool2d-130            [-1, 576, 1, 1]               0
+          Conv2d-131            [-1, 144, 1, 1]          83,088
+            ReLU-132            [-1, 144, 1, 1]               0
+          Conv2d-133            [-1, 576, 1, 1]          83,520
+     Hardsigmoid-134            [-1, 576, 1, 1]               0
+SqueezeExcitation-135            [-1, 576, 7, 7]               0
+          Conv2d-136             [-1, 96, 7, 7]          55,296
+     BatchNorm2d-137             [-1, 96, 7, 7]             192
+InvertedResidual-138             [-1, 96, 7, 7]               0
+          Conv2d-139            [-1, 576, 7, 7]          55,296
+     BatchNorm2d-140            [-1, 576, 7, 7]           1,152
+       Hardswish-141            [-1, 576, 7, 7]               0
+          Conv2d-142            [-1, 576, 7, 7]          14,400
+     BatchNorm2d-143            [-1, 576, 7, 7]           1,152
+       Hardswish-144            [-1, 576, 7, 7]               0
+AdaptiveAvgPool2d-145            [-1, 576, 1, 1]               0
+          Conv2d-146            [-1, 144, 1, 1]          83,088
+            ReLU-147            [-1, 144, 1, 1]               0
+          Conv2d-148            [-1, 576, 1, 1]          83,520
+     Hardsigmoid-149            [-1, 576, 1, 1]               0
+SqueezeExcitation-150            [-1, 576, 7, 7]               0
+          Conv2d-151             [-1, 96, 7, 7]          55,296
+     BatchNorm2d-152             [-1, 96, 7, 7]             192
+InvertedResidual-153             [-1, 96, 7, 7]               0
+          Conv2d-154            [-1, 576, 7, 7]          55,296
+     BatchNorm2d-155            [-1, 576, 7, 7]           1,152
+       Hardswish-156            [-1, 576, 7, 7]               0
+AdaptiveAvgPool2d-157            [-1, 576, 1, 1]               0
+          Linear-158                 [-1, 1024]         590,848
+       Hardswish-159                 [-1, 1024]               0
+         Dropout-160                 [-1, 1024]               0
+          Linear-161                 [-1, 1000]       1,025,000
+================================================================
+Total params: 2,542,856
+Trainable params: 2,542,856
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.57
+Forward/backward pass size (MB): 34.61
+Params size (MB): 9.70
+Estimated Total Size (MB): 44.88
+----------------------------------------------------------------
+Running with Model: MobileNet-V3-Small
+EPOCHS : 0
+
+Test set: Average loss: 1.2217, Accuracy: 5726/10000 (57.26%)
+
+EPOCHS : 1
+
+Test set: Average loss: 0.9406, Accuracy: 6721/10000 (67.21%)
+
+EPOCHS : 2
+
+Test set: Average loss: 0.8510, Accuracy: 7121/10000 (71.21%)
+
+EPOCHS : 3
+
+Test set: Average loss: 0.6596, Accuracy: 7799/10000 (77.99%)
+
+EPOCHS : 4
+
+Test set: Average loss: 0.6326, Accuracy: 7839/10000 (78.39%)
+
+EPOCHS : 5
+
+Test set: Average loss: 0.5901, Accuracy: 8017/10000 (80.17%)
+
+EPOCHS : 6
+
+Test set: Average loss: 0.5346, Accuracy: 8228/10000 (82.28%)
+
+EPOCHS : 7
+
+Test set: Average loss: 0.5617, Accuracy: 8205/10000 (82.05%)
+
+EPOCHS : 8
+
+Test set: Average loss: 0.5541, Accuracy: 8275/10000 (82.75%)
+
+EPOCHS : 9
+
+Test set: Average loss: 0.5147, Accuracy: 8342/10000 (83.42%)
+
+EPOCHS : 10
+
+Test set: Average loss: 0.5263, Accuracy: 8387/10000 (83.87%)
+
+EPOCHS : 11
+
+Test set: Average loss: 0.5360, Accuracy: 8382/10000 (83.82%)
+
+EPOCHS : 12
+
+Test set: Average loss: 0.5797, Accuracy: 8354/10000 (83.54%)
+
+EPOCHS : 13
+Epoch 00014: reducing learning rate of group 0 to 5.0000e-04.
+
+Test set: Average loss: 0.5429, Accuracy: 8425/10000 (84.25%)
+
+EPOCHS : 14
+
+Test set: Average loss: 0.4527, Accuracy: 8674/10000 (86.74%)
+
+EPOCHS : 15
+
+Test set: Average loss: 0.4571, Accuracy: 8706/10000 (87.06%)
+
+EPOCHS : 16
+
+Test set: Average loss: 0.4623, Accuracy: 8703/10000 (87.03%)
+
+EPOCHS : 17
+
+Test set: Average loss: 0.4723, Accuracy: 8707/10000 (87.07%)
+
+EPOCHS : 18
+
+Test set: Average loss: 0.4812, Accuracy: 8725/10000 (87.25%)
+
+EPOCHS : 19
+
+Test set: Average loss: 0.4877, Accuracy: 8725/10000 (87.25%)
+
+EPOCHS : 20
+Epoch 00021: reducing learning rate of group 0 to 2.5000e-05.
+
+Test set: Average loss: 0.4983, Accuracy: 8719/10000 (87.19%)
+
+EPOCHS : 21
+
+Test set: Average loss: 0.4973, Accuracy: 8717/10000 (87.17%)
+
+EPOCHS : 22
+
+Test set: Average loss: 0.4984, Accuracy: 8721/10000 (87.21%)
+
+EPOCHS : 23
+Epoch 00024: reducing learning rate of group 0 to 1.2500e-06.
+
+Test set: Average loss: 0.4981, Accuracy: 8718/10000 (87.18%)
+
+EPOCHS : 24
+
+Test set: Average loss: 0.4995, Accuracy: 8720/10000 (87.20%)
+
+EPOCHS : 25
+
+Test set: Average loss: 0.4986, Accuracy: 8727/10000 (87.27%)
+
+EPOCHS : 26
+Epoch 00027: reducing learning rate of group 0 to 6.2500e-08.
+
+Test set: Average loss: 0.4987, Accuracy: 8725/10000 (87.25%)
+
+EPOCHS : 27
+
+Test set: Average loss: 0.4990, Accuracy: 8727/10000 (87.27%)
+
+EPOCHS : 28
+
+Test set: Average loss: 0.4986, Accuracy: 8723/10000 (87.23%)
+
+EPOCHS : 29
+
+Test set: Average loss: 0.4992, Accuracy: 8718/10000 (87.18%)
+
+EPOCHS : 30
+Epoch 00031: reducing learning rate of group 0 to 3.1250e-09.
+
+Test set: Average loss: 0.4984, Accuracy: 8723/10000 (87.23%)
+
+EPOCHS : 31
+
+Test set: Average loss: 0.4985, Accuracy: 8726/10000 (87.26%)
+
+EPOCHS : 32
+
+Test set: Average loss: 0.4989, Accuracy: 8719/10000 (87.19%)
+
+EPOCHS : 33
+
+Test set: Average loss: 0.4977, Accuracy: 8728/10000 (87.28%)
+
+EPOCHS : 34
+
+Test set: Average loss: 0.4988, Accuracy: 8708/10000 (87.08%)
+
+EPOCHS : 35
+
+Test set: Average loss: 0.4975, Accuracy: 8722/10000 (87.22%)
+
+EPOCHS : 36
+
+Test set: Average loss: 0.4987, Accuracy: 8727/10000 (87.27%)
+
+EPOCHS : 37
+
+Test set: Average loss: 0.4995, Accuracy: 8717/10000 (87.17%)
+
+EPOCHS : 38
+
+Test set: Average loss: 0.4978, Accuracy: 8724/10000 (87.24%)
+
+EPOCHS : 39
+
+Test set: Average loss: 0.4988, Accuracy: 8719/10000 (87.19%)
+
+Model: MobileNet-V3-Small, Test Accuracy: 87.28, Run Time: 4598.54
+cuda
+Files already downloaded and verified
+Files already downloaded and verified
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1         [-1, 64, 224, 224]           1,792
+              ReLU-2         [-1, 64, 224, 224]               0
+            Conv2d-3         [-1, 64, 224, 224]          36,928
+              ReLU-4         [-1, 64, 224, 224]               0
+         MaxPool2d-5         [-1, 64, 112, 112]               0
+            Conv2d-6        [-1, 128, 112, 112]          73,856
+              ReLU-7        [-1, 128, 112, 112]               0
+            Conv2d-8        [-1, 128, 112, 112]         147,584
+              ReLU-9        [-1, 128, 112, 112]               0
+        MaxPool2d-10          [-1, 128, 56, 56]               0
+           Conv2d-11          [-1, 256, 56, 56]         295,168
+             ReLU-12          [-1, 256, 56, 56]               0
+           Conv2d-13          [-1, 256, 56, 56]         590,080
+             ReLU-14          [-1, 256, 56, 56]               0
+           Conv2d-15          [-1, 256, 56, 56]         590,080
+             ReLU-16          [-1, 256, 56, 56]               0
+        MaxPool2d-17          [-1, 256, 28, 28]               0
+           Conv2d-18          [-1, 512, 28, 28]       1,180,160
+             ReLU-19          [-1, 512, 28, 28]               0
+           Conv2d-20          [-1, 512, 28, 28]       2,359,808
+             ReLU-21          [-1, 512, 28, 28]               0
+           Conv2d-22          [-1, 512, 28, 28]       2,359,808
+             ReLU-23          [-1, 512, 28, 28]               0
+        MaxPool2d-24          [-1, 512, 14, 14]               0
+           Conv2d-25          [-1, 512, 14, 14]       2,359,808
+             ReLU-26          [-1, 512, 14, 14]               0
+           Conv2d-27          [-1, 512, 14, 14]       2,359,808
+             ReLU-28          [-1, 512, 14, 14]               0
+           Conv2d-29          [-1, 512, 14, 14]       2,359,808
+             ReLU-30          [-1, 512, 14, 14]               0
+        MaxPool2d-31            [-1, 512, 7, 7]               0
+AdaptiveAvgPool2d-32            [-1, 512, 7, 7]               0
+           Linear-33                 [-1, 4096]     102,764,544
+             ReLU-34                 [-1, 4096]               0
+          Dropout-35                 [-1, 4096]               0
+           Linear-36                 [-1, 4096]      16,781,312
+             ReLU-37                 [-1, 4096]               0
+          Dropout-38                 [-1, 4096]               0
+           Linear-39                 [-1, 1000]       4,097,000
+================================================================
+Total params: 138,357,544
+Trainable params: 138,357,544
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.57
+Forward/backward pass size (MB): 218.78
+Params size (MB): 527.79
+Estimated Total Size (MB): 747.15
+----------------------------------------------------------------
+Running with Model: VGG
+EPOCHS : 0
+
+Test set: Average loss: 1.3365, Accuracy: 5315/10000 (53.15%)
+
+EPOCHS : 1
+
+Test set: Average loss: 0.9873, Accuracy: 6501/10000 (65.01%)
+
+EPOCHS : 2
+
+Test set: Average loss: 0.8249, Accuracy: 7160/10000 (71.60%)
+
+EPOCHS : 3
+
+Test set: Average loss: 0.7586, Accuracy: 7366/10000 (73.66%)
+
+EPOCHS : 4
+
+Test set: Average loss: 0.7454, Accuracy: 7528/10000 (75.28%)
+
+EPOCHS : 5
+
+Test set: Average loss: 0.6609, Accuracy: 7826/10000 (78.26%)
+
+EPOCHS : 6
+
+Test set: Average loss: 0.6629, Accuracy: 7887/10000 (78.87%)
+
+EPOCHS : 7
+
+Test set: Average loss: 0.6683, Accuracy: 7871/10000 (78.71%)
+
+EPOCHS : 8
+
+Test set: Average loss: 0.7186, Accuracy: 7880/10000 (78.80%)
+
+EPOCHS : 9
+
+Test set: Average loss: 0.7239, Accuracy: 7980/10000 (79.80%)
+
+EPOCHS : 10
+
+Test set: Average loss: 0.8153, Accuracy: 7744/10000 (77.44%)
+
+EPOCHS : 11
+
+Test set: Average loss: 0.7338, Accuracy: 7952/10000 (79.52%)
+
+EPOCHS : 12
+Epoch 00013: reducing learning rate of group 0 to 5.0000e-04.
+
+Test set: Average loss: 0.7918, Accuracy: 7871/10000 (78.71%)
+
+EPOCHS : 13
+
+Test set: Average loss: 0.7227, Accuracy: 8130/10000 (81.30%)
+
+EPOCHS : 14
+
+Test set: Average loss: 0.7740, Accuracy: 8132/10000 (81.32%)
+
+EPOCHS : 15
+
+Test set: Average loss: 0.8292, Accuracy: 8142/10000 (81.42%)
+
+EPOCHS : 16
+
+Test set: Average loss: 0.8457, Accuracy: 8165/10000 (81.65%)
+
+EPOCHS : 17
+Epoch 00018: reducing learning rate of group 0 to 2.5000e-05.
+
+Test set: Average loss: 0.8743, Accuracy: 8176/10000 (81.76%)
+
+EPOCHS : 18
+
+Test set: Average loss: 0.8738, Accuracy: 8183/10000 (81.83%)
+
+EPOCHS : 19
+
+Test set: Average loss: 0.8695, Accuracy: 8188/10000 (81.88%)
+
+EPOCHS : 20
+Epoch 00021: reducing learning rate of group 0 to 1.2500e-06.
+
+Test set: Average loss: 0.8697, Accuracy: 8192/10000 (81.92%)
+
+EPOCHS : 21
+
+Test set: Average loss: 0.8697, Accuracy: 8192/10000 (81.92%)
+
+EPOCHS : 22
+
+Test set: Average loss: 0.8698, Accuracy: 8192/10000 (81.92%)
+
+EPOCHS : 23
+
+Test set: Average loss: 0.8696, Accuracy: 8192/10000 (81.92%)
+
+EPOCHS : 24
+
+Test set: Average loss: 0.8697, Accuracy: 8192/10000 (81.92%)
+
+EPOCHS : 25
+
+Test set: Average loss: 0.8697, Accuracy: 8193/10000 (81.93%)
+
+EPOCHS : 26
+Epoch 00027: reducing learning rate of group 0 to 6.2500e-08.
+
+Test set: Average loss: 0.8697, Accuracy: 8193/10000 (81.93%)
+
+EPOCHS : 27
+
+Test set: Average loss: 0.8697, Accuracy: 8193/10000 (81.93%)
+
+EPOCHS : 28
+
+Test set: Average loss: 0.8697, Accuracy: 8193/10000 (81.93%)
+
+EPOCHS : 29
+
+Test set: Average loss: 0.8697, Accuracy: 8193/10000 (81.93%)
+
+EPOCHS : 30
+
+Test set: Average loss: 0.8697, Accuracy: 8193/10000 (81.93%)
+
+EPOCHS : 31
+
+Test set: Average loss: 0.8697, Accuracy: 8193/10000 (81.93%)
+
+EPOCHS : 32
+
+Test set: Average loss: 0.8697, Accuracy: 8193/10000 (81.93%)
+
+EPOCHS : 33
+
+Test set: Average loss: 0.8697, Accuracy: 8193/10000 (81.93%)
+
+EPOCHS : 34
+
+Test set: Average loss: 0.8697, Accuracy: 8193/10000 (81.93%)
+
+EPOCHS : 35
+
+Test set: Average loss: 0.8697, Accuracy: 8193/10000 (81.93%)
+
+EPOCHS : 36
+Epoch 00037: reducing learning rate of group 0 to 3.1250e-09.
+
+Test set: Average loss: 0.8697, Accuracy: 8193/10000 (81.93%)
+
+EPOCHS : 37
+
+Test set: Average loss: 0.8697, Accuracy: 8193/10000 (81.93%)
+
+EPOCHS : 38
+
+Test set: Average loss: 0.8697, Accuracy: 8193/10000 (81.93%)
+
+EPOCHS : 39
+
+Test set: Average loss: 0.8697, Accuracy: 8193/10000 (81.93%)
+
+Model: VGG, Test Accuracy: 81.93, Run Time: 31783.50
+

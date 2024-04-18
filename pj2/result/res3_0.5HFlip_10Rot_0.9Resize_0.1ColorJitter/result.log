@@ -1,0 +1,244 @@
+cuda
+Files already downloaded and verified
+Files already downloaded and verified
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1           [-1, 64, 32, 32]           1,728
+       BatchNorm2d-2           [-1, 64, 32, 32]             128
+            Conv2d-3           [-1, 64, 32, 32]          36,864
+       BatchNorm2d-4           [-1, 64, 32, 32]             128
+           Dropout-5           [-1, 64, 32, 32]               0
+            Conv2d-6           [-1, 64, 32, 32]          36,864
+       BatchNorm2d-7           [-1, 64, 32, 32]             128
+           Dropout-8           [-1, 64, 32, 32]               0
+        BasicBlock-9           [-1, 64, 32, 32]               0
+           Conv2d-10           [-1, 64, 32, 32]          36,864
+      BatchNorm2d-11           [-1, 64, 32, 32]             128
+          Dropout-12           [-1, 64, 32, 32]               0
+           Conv2d-13           [-1, 64, 32, 32]          36,864
+      BatchNorm2d-14           [-1, 64, 32, 32]             128
+          Dropout-15           [-1, 64, 32, 32]               0
+       BasicBlock-16           [-1, 64, 32, 32]               0
+           Conv2d-17          [-1, 128, 16, 16]          73,728
+      BatchNorm2d-18          [-1, 128, 16, 16]             256
+          Dropout-19          [-1, 128, 16, 16]               0
+           Conv2d-20          [-1, 128, 16, 16]         147,456
+      BatchNorm2d-21          [-1, 128, 16, 16]             256
+          Dropout-22          [-1, 128, 16, 16]               0
+           Conv2d-23          [-1, 128, 16, 16]           8,192
+      BatchNorm2d-24          [-1, 128, 16, 16]             256
+          Dropout-25          [-1, 128, 16, 16]               0
+       BasicBlock-26          [-1, 128, 16, 16]               0
+           Conv2d-27          [-1, 128, 16, 16]         147,456
+      BatchNorm2d-28          [-1, 128, 16, 16]             256
+          Dropout-29          [-1, 128, 16, 16]               0
+           Conv2d-30          [-1, 128, 16, 16]         147,456
+      BatchNorm2d-31          [-1, 128, 16, 16]             256
+          Dropout-32          [-1, 128, 16, 16]               0
+       BasicBlock-33          [-1, 128, 16, 16]               0
+           Conv2d-34            [-1, 256, 8, 8]         294,912
+      BatchNorm2d-35            [-1, 256, 8, 8]             512
+          Dropout-36            [-1, 256, 8, 8]               0
+           Conv2d-37            [-1, 256, 8, 8]         589,824
+      BatchNorm2d-38            [-1, 256, 8, 8]             512
+          Dropout-39            [-1, 256, 8, 8]               0
+           Conv2d-40            [-1, 256, 8, 8]          32,768
+      BatchNorm2d-41            [-1, 256, 8, 8]             512
+          Dropout-42            [-1, 256, 8, 8]               0
+       BasicBlock-43            [-1, 256, 8, 8]               0
+           Conv2d-44            [-1, 256, 8, 8]         589,824
+      BatchNorm2d-45            [-1, 256, 8, 8]             512
+          Dropout-46            [-1, 256, 8, 8]               0
+           Conv2d-47            [-1, 256, 8, 8]         589,824
+      BatchNorm2d-48            [-1, 256, 8, 8]             512
+          Dropout-49            [-1, 256, 8, 8]               0
+       BasicBlock-50            [-1, 256, 8, 8]               0
+           Conv2d-51            [-1, 512, 4, 4]       1,179,648
+      BatchNorm2d-52            [-1, 512, 4, 4]           1,024
+          Dropout-53            [-1, 512, 4, 4]               0
+           Conv2d-54            [-1, 512, 4, 4]       2,359,296
+      BatchNorm2d-55            [-1, 512, 4, 4]           1,024
+          Dropout-56            [-1, 512, 4, 4]               0
+           Conv2d-57            [-1, 512, 4, 4]         131,072
+      BatchNorm2d-58            [-1, 512, 4, 4]           1,024
+          Dropout-59            [-1, 512, 4, 4]               0
+       BasicBlock-60            [-1, 512, 4, 4]               0
+           Conv2d-61            [-1, 512, 4, 4]       2,359,296
+      BatchNorm2d-62            [-1, 512, 4, 4]           1,024
+          Dropout-63            [-1, 512, 4, 4]               0
+           Conv2d-64            [-1, 512, 4, 4]       2,359,296
+      BatchNorm2d-65            [-1, 512, 4, 4]           1,024
+          Dropout-66            [-1, 512, 4, 4]               0
+       BasicBlock-67            [-1, 512, 4, 4]               0
+           Linear-68                   [-1, 10]           5,130
+================================================================
+Total params: 11,173,962
+Trainable params: 11,173,962
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.01
+Forward/backward pass size (MB): 15.44
+Params size (MB): 42.63
+Estimated Total Size (MB): 58.07
+----------------------------------------------------------------
+EPOCHS : 0
+
+Test set: Average loss: 2.5621, Accuracy: 3623/10000 (36.23%)
+
+EPOCHS : 1
+
+Test set: Average loss: 1.1852, Accuracy: 5831/10000 (58.31%)
+
+EPOCHS : 2
+
+Test set: Average loss: 1.2693, Accuracy: 6002/10000 (60.02%)
+
+EPOCHS : 3
+
+Test set: Average loss: 1.0139, Accuracy: 6598/10000 (65.98%)
+
+EPOCHS : 4
+
+Test set: Average loss: 0.9168, Accuracy: 7034/10000 (70.34%)
+
+EPOCHS : 5
+
+Test set: Average loss: 0.7395, Accuracy: 7547/10000 (75.47%)
+
+EPOCHS : 6
+
+Test set: Average loss: 0.7704, Accuracy: 7473/10000 (74.73%)
+
+EPOCHS : 7
+
+Test set: Average loss: 0.6355, Accuracy: 7900/10000 (79.00%)
+
+EPOCHS : 8
+
+Test set: Average loss: 0.6392, Accuracy: 7926/10000 (79.26%)
+
+EPOCHS : 9
+
+Test set: Average loss: 0.6431, Accuracy: 7883/10000 (78.83%)
+
+EPOCHS : 10
+
+Test set: Average loss: 0.5813, Accuracy: 8120/10000 (81.20%)
+
+EPOCHS : 11
+
+Test set: Average loss: 0.6231, Accuracy: 7963/10000 (79.63%)
+
+EPOCHS : 12
+
+Test set: Average loss: 0.5167, Accuracy: 8318/10000 (83.18%)
+
+EPOCHS : 13
+
+Test set: Average loss: 0.5486, Accuracy: 8184/10000 (81.84%)
+
+EPOCHS : 14
+
+Test set: Average loss: 0.5011, Accuracy: 8346/10000 (83.46%)
+
+EPOCHS : 15
+
+Test set: Average loss: 0.4020, Accuracy: 8679/10000 (86.79%)
+
+EPOCHS : 16
+
+Test set: Average loss: 0.4008, Accuracy: 8674/10000 (86.74%)
+
+EPOCHS : 17
+
+Test set: Average loss: 0.3975, Accuracy: 8694/10000 (86.94%)
+
+EPOCHS : 18
+
+Test set: Average loss: 0.3984, Accuracy: 8682/10000 (86.82%)
+
+EPOCHS : 19
+
+Test set: Average loss: 0.3961, Accuracy: 8715/10000 (87.15%)
+
+EPOCHS : 20
+
+Test set: Average loss: 0.3966, Accuracy: 8691/10000 (86.91%)
+
+EPOCHS : 21
+
+Test set: Average loss: 0.3940, Accuracy: 8703/10000 (87.03%)
+
+EPOCHS : 22
+
+Test set: Average loss: 0.3919, Accuracy: 8702/10000 (87.02%)
+
+EPOCHS : 23
+
+Test set: Average loss: 0.3936, Accuracy: 8698/10000 (86.98%)
+
+EPOCHS : 24
+
+Test set: Average loss: 0.3913, Accuracy: 8709/10000 (87.09%)
+
+EPOCHS : 25
+
+Test set: Average loss: 0.3911, Accuracy: 8719/10000 (87.19%)
+
+EPOCHS : 26
+
+Test set: Average loss: 0.3907, Accuracy: 8721/10000 (87.21%)
+
+EPOCHS : 27
+
+Test set: Average loss: 0.3926, Accuracy: 8715/10000 (87.15%)
+
+EPOCHS : 28
+
+Test set: Average loss: 0.3920, Accuracy: 8716/10000 (87.16%)
+
+EPOCHS : 29
+
+Test set: Average loss: 0.3920, Accuracy: 8706/10000 (87.06%)
+
+EPOCHS : 30
+
+Test set: Average loss: 0.3936, Accuracy: 8719/10000 (87.19%)
+
+EPOCHS : 31
+
+Test set: Average loss: 0.3933, Accuracy: 8706/10000 (87.06%)
+
+EPOCHS : 32
+
+Test set: Average loss: 0.3916, Accuracy: 8718/10000 (87.18%)
+
+EPOCHS : 33
+
+Test set: Average loss: 0.3924, Accuracy: 8713/10000 (87.13%)
+
+EPOCHS : 34
+
+Test set: Average loss: 0.3930, Accuracy: 8709/10000 (87.09%)
+
+EPOCHS : 35
+
+Test set: Average loss: 0.3942, Accuracy: 8701/10000 (87.01%)
+
+EPOCHS : 36
+
+Test set: Average loss: 0.3903, Accuracy: 8706/10000 (87.06%)
+
+EPOCHS : 37
+
+Test set: Average loss: 0.3907, Accuracy: 8715/10000 (87.15%)
+
+EPOCHS : 38
+
+Test set: Average loss: 0.3932, Accuracy: 8713/10000 (87.13%)
+
+EPOCHS : 39
+
+Test set: Average loss: 0.3901, Accuracy: 8723/10000 (87.23%)
+
