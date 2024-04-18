@@ -166,32 +166,11 @@ if __name__ == '__main__':
     original_stdout = sys.stdout
     sys.stdout = log_file
 
-    test_acc = []
-    run_time = []
-
     for model in models:
         start = time.time()
         temp = main(model)
         end = time.time()
         print(f'Model: {model}, Test Accuracy: {temp:.2f}, Run Time: {end - start:.2f}')
-        test_acc.append(temp)
-        run_time.append(end - start)
-
-    # 使用柱状图分别展示不同模型的准确率和运行时间
-    fig, axs = plt.subplots(2, 1, figsize=(10, 10))
-
-    axs[0].bar(models, test_acc)
-    axs[0].set_title('Test Accuracy')
-    axs[0].set_xlabel('Model')
-    axs[0].set_ylabel('Accuracy (%)')
-
-    axs[1].bar(models, run_time)
-    axs[1].set_title('Run Time')
-    axs[1].set_xlabel('Model')
-    axs[1].set_ylabel('Time (s)')
-
-    plt.show()
-    plt.savefig('result_models.png')
 
     sys.stdout = original_stdout
     log_file.close()
