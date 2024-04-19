@@ -84,7 +84,7 @@ class ResNet(nn.Module):
         out = self.linear(out)
         return F.log_softmax(out, dim=-1)
 
-
+#
 def design_model():
     return ResNet(BasicBlock, [2, 2, 2, 2])
 
