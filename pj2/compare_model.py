@@ -1,13 +1,9 @@
 # Importing Libraries
 import os
-import random
 import sys
 import time
 
-import matplotlib.pyplot as plt
-import numpy as np
 import torch
-import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
 import torchvision
@@ -17,18 +13,24 @@ from torchvision import datasets
 from torchvision import transforms
 from tqdm import tqdm
 
+from LeNet import LeNet
+from main import BasicBlock, ResNet
+
 
 def design_model(cnn_model):
     # https://pytorch.org/vision/main/models.html#classification
     if cnn_model == 'ResNet-18':
-        return torchvision.models.resnet18()
-        # return ResNet(BasicBlock, [2, 2, 2, 2])
+        return ResNet(BasicBlock, [2, 2, 2, 2])
+        # return torchvision.models.resnet18()
     elif cnn_model == 'AlexNet':
         return torchvision.models.alexnet()
     elif cnn_model == 'VGG':
         return torchvision.models.vgg16()
     elif cnn_model == 'MobileNet-V3-Small':
         return torchvision.models.mobilenet_v3_small()
+    elif cnn_model == 'LeNet':
+        # 此为自定义的LeNet.py中的CNN网络
+        return LeNet()
     else:
         exit('Model not supported')
 
@@ -45,8 +47,6 @@ def model_training(model, device, train_dataloader, optimizer, train_acc, train_
     for batch_idx, (data, target) in enumerate(pbar):
         data, target = data.to(device), target.to(device)
 
-        # TODO
-        # 补全内容:optimizer的操作，获取模型输出，loss设计与计算，反向传播
         optimizer.zero_grad()
         y_pred = model(data)
         loss = F.cross_entropy(y_pred, target)
@@ -74,8 +74,6 @@ def model_testing(model, device, test_dataloader, test_acc, test_losses, misclas
         for index, (data, target) in enumerate(test_dataloader):
             data, target = data.to(device), target.to(device)
 
-            # TODO
-            # 补全内容:获取模型输出，loss计算
             output = model(data)
             test_loss += F.cross_entropy(output, target, reduction='sum').item()
 
@@ -160,8 +158,9 @@ def main(cnn_model):
 
 
 if __name__ == '__main__':
+    # 以下统计的运行时间均为在九天毕昇平台上使用NVIDIA V100 虚拟化 CPU 2核 内存 16G得出的结果
 
-    models = ['ResNet-18', 'AlexNet', 'MobileNet-V3-Small', 'VGG']
+    models = ['LeNet', 'ResNet-18', 'AlexNet', 'MobileNet-V3-Small', 'VGG']
     log_file = open("result_models.log", "w")
     original_stdout = sys.stdout
     sys.stdout = log_file

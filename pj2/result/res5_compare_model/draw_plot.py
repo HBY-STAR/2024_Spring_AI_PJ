@@ -2,11 +2,11 @@ from matplotlib import pyplot as plt
 
 # using data from result_model.log
 
-model = ['ResNet-18', 'AlexNet', 'MobileNet-V3-Small', 'VGG']
+model = ['LeNet-5', 'ResNet-18', 'AlexNet', 'MobileNet', 'VGG-16']
 
-total_params = [11689512, 61100840, 2542856, 138357544]
-test_acc = [86.23, 80.75, 87.28, 81.93]
-run_time = [8170.24, 3523.40, 4598.54, 31783.50]
+total_params = [5611190, 11689512, 61100840, 2542856, 138357544]
+test_acc = [52.60, 86.23, 80.75, 87.28, 81.93]
+run_time = [3358.07, 8170.24, 3523.40, 4598.54, 31783.50]
 
 fig, axs = plt.subplots(1, 3, figsize=(15, 9), dpi=300)
 
@@ -30,5 +30,4 @@ axs[2].set_title('Model vs Run Time')
 
 plt.tight_layout()
 plt.show()
-plt.savefig('result_model.png')
 

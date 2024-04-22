@@ -4,6 +4,194 @@ Files already downloaded and verified
 ----------------------------------------------------------------
         Layer (type)               Output Shape         Param #
 ================================================================
+            Conv2d-1          [-1, 6, 220, 220]             456
+            Conv2d-2         [-1, 16, 108, 108]             880
+            Linear-3                  [-1, 120]       5,598,840
+            Linear-4                   [-1, 84]          10,164
+            Linear-5                   [-1, 10]             850
+================================================================
+Total params: 5,611,190
+Trainable params: 5,611,190
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.57
+Forward/backward pass size (MB): 3.64
+Params size (MB): 21.40
+Estimated Total Size (MB): 25.62
+----------------------------------------------------------------
+Running with Model: LeNet
+EPOCHS : 0
+
+Test set: Average loss: 1.5701, Accuracy: 4243/10000 (42.43%)
+
+EPOCHS : 1
+
+Test set: Average loss: 1.4587, Accuracy: 4723/10000 (47.23%)
+
+EPOCHS : 2
+
+Test set: Average loss: 1.4641, Accuracy: 4855/10000 (48.55%)
+
+EPOCHS : 3
+
+Test set: Average loss: 1.4267, Accuracy: 4935/10000 (49.35%)
+
+EPOCHS : 4
+
+Test set: Average loss: 1.4276, Accuracy: 5039/10000 (50.39%)
+
+EPOCHS : 5
+
+Test set: Average loss: 1.4814, Accuracy: 5201/10000 (52.01%)
+
+EPOCHS : 6
+
+Test set: Average loss: 1.6674, Accuracy: 5167/10000 (51.67%)
+
+EPOCHS : 7
+
+Test set: Average loss: 1.6677, Accuracy: 5160/10000 (51.60%)
+
+EPOCHS : 8
+
+Test set: Average loss: 1.8865, Accuracy: 5088/10000 (50.88%)
+
+EPOCHS : 9
+
+Test set: Average loss: 2.0973, Accuracy: 5088/10000 (50.88%)
+
+EPOCHS : 10
+
+Test set: Average loss: 2.1310, Accuracy: 4755/10000 (47.55%)
+
+EPOCHS : 11
+
+Test set: Average loss: 2.3846, Accuracy: 4881/10000 (48.81%)
+
+EPOCHS : 12
+Epoch 00013: reducing learning rate of group 0 to 5.0000e-04.
+
+Test set: Average loss: 2.3320, Accuracy: 4906/10000 (49.06%)
+
+EPOCHS : 13
+
+Test set: Average loss: 2.4965, Accuracy: 5209/10000 (52.09%)
+
+EPOCHS : 14
+
+Test set: Average loss: 2.7281, Accuracy: 5242/10000 (52.42%)
+
+EPOCHS : 15
+
+Test set: Average loss: 2.8979, Accuracy: 5260/10000 (52.60%)
+
+EPOCHS : 16
+
+Test set: Average loss: 3.0546, Accuracy: 5251/10000 (52.51%)
+
+EPOCHS : 17
+Epoch 00018: reducing learning rate of group 0 to 2.5000e-05.
+
+Test set: Average loss: 3.2051, Accuracy: 5251/10000 (52.51%)
+
+EPOCHS : 18
+
+Test set: Average loss: 3.2132, Accuracy: 5253/10000 (52.53%)
+
+EPOCHS : 19
+
+Test set: Average loss: 3.2217, Accuracy: 5250/10000 (52.50%)
+
+EPOCHS : 20
+Epoch 00021: reducing learning rate of group 0 to 1.2500e-06.
+
+Test set: Average loss: 3.2299, Accuracy: 5248/10000 (52.48%)
+
+EPOCHS : 21
+
+Test set: Average loss: 3.2303, Accuracy: 5248/10000 (52.48%)
+
+EPOCHS : 22
+
+Test set: Average loss: 3.2307, Accuracy: 5248/10000 (52.48%)
+
+EPOCHS : 23
+Epoch 00024: reducing learning rate of group 0 to 6.2500e-08.
+
+Test set: Average loss: 3.2311, Accuracy: 5249/10000 (52.49%)
+
+EPOCHS : 24
+
+Test set: Average loss: 3.2311, Accuracy: 5249/10000 (52.49%)
+
+EPOCHS : 25
+
+Test set: Average loss: 3.2311, Accuracy: 5249/10000 (52.49%)
+
+EPOCHS : 26
+Epoch 00027: reducing learning rate of group 0 to 3.1250e-09.
+
+Test set: Average loss: 3.2311, Accuracy: 5249/10000 (52.49%)
+
+EPOCHS : 27
+
+Test set: Average loss: 3.2311, Accuracy: 5249/10000 (52.49%)
+
+EPOCHS : 28
+
+Test set: Average loss: 3.2311, Accuracy: 5249/10000 (52.49%)
+
+EPOCHS : 29
+
+Test set: Average loss: 3.2311, Accuracy: 5249/10000 (52.49%)
+
+EPOCHS : 30
+
+Test set: Average loss: 3.2311, Accuracy: 5249/10000 (52.49%)
+
+EPOCHS : 31
+
+Test set: Average loss: 3.2311, Accuracy: 5249/10000 (52.49%)
+
+EPOCHS : 32
+
+Test set: Average loss: 3.2311, Accuracy: 5249/10000 (52.49%)
+
+EPOCHS : 33
+
+Test set: Average loss: 3.2311, Accuracy: 5249/10000 (52.49%)
+
+EPOCHS : 34
+
+Test set: Average loss: 3.2311, Accuracy: 5249/10000 (52.49%)
+
+EPOCHS : 35
+
+Test set: Average loss: 3.2311, Accuracy: 5249/10000 (52.49%)
+
+EPOCHS : 36
+
+Test set: Average loss: 3.2311, Accuracy: 5249/10000 (52.49%)
+
+EPOCHS : 37
+
+Test set: Average loss: 3.2311, Accuracy: 5249/10000 (52.49%)
+
+EPOCHS : 38
+
+Test set: Average loss: 3.2311, Accuracy: 5249/10000 (52.49%)
+
+EPOCHS : 39
+
+Test set: Average loss: 3.2311, Accuracy: 5249/10000 (52.49%)
+
+Model: LeNet, Test Accuracy: 52.60, Run Time: 3358.07
+cuda
+Files already downloaded and verified
+Files already downloaded and verified
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
             Conv2d-1         [-1, 64, 112, 112]           9,408
        BatchNorm2d-2         [-1, 64, 112, 112]             128
               ReLU-3         [-1, 64, 112, 112]               0
