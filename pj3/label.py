@@ -20,8 +20,8 @@ def parse_xml(xml_file, image_shape):
             ymax = int(obj.find('bndbox/ymax').text)
             x = (xmin + xmax) // 2
             y = (ymin + ymax) // 2
-    if 0 <= y < image_shape[0] and 0 <= x < image_shape[1]:
-        density_map[y, x] = 1
+        if 0 <= y < image_shape[0] and 0 <= x < image_shape[1]:
+            density_map[y, x] = 1
     density_map = gaussian_filter(density_map, sigma=15)
     return density_map
 

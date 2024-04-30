@@ -1,7 +1,5 @@
-import torch
-from vit_pytorch import ViT
-from einops.layers.torch import Rearrange
 import torch.nn as nn
+import torch
 from torchvision import models
 
 
@@ -58,44 +56,3 @@ def make_layers(cfg, in_channels=3, batch_norm=False, dilation=False):
                 layers += [conv2d, nn.ReLU(inplace=True)]
             in_channels = v
     return nn.Sequential(*layers)
-
-
-class Vit4R(nn.Module):
-    def __init__(self, load_weights=False):
-        super(Vit4R, self).__init__()
-        self.seen = 0
-        self.vit = ViT(
-            image_size=64,
-            patch_size=16,
-            num_classes=1,  # Output regression score
-            dim=768,  # You can adjust this based on your needs
-            depth=12,  # Number of transformer blocks
-            heads=12,  # Number of attention heads
-            mlp_dim=1024,  # Hidden layer size in MLP
-            dropout=0.1,  # Dropout rate
-            emb_dropout=0.1  # Dropout rate for token embeddings
-        )
-
-        self.output_layer = nn.Conv2d(768, 1, kernel_size=1)
-
-        if not load_weights:
-            # Initialize weights of ViT
-            self._initialize_weights()
-
-    def forward(self, x):
-        # Rearrange input for ViT
-        x = Rearrange('b c h w -> b (h w) c')(x)
-        x = self.vit(x)
-        x = self.output_layer(x)
-        return x
-
-    def _initialize_weights(self):
-        # Initialize weights of ViT
-        for name, param in self.named_parameters():
-            if 'weight' in name:
-                if 'vit' in name:
-                    # Initialize weights of ViT
-                    nn.init.xavier_uniform_(param)
-            elif 'bias' in name:
-                # Initialize biases
-                nn.init.constant_(param, 0.0)
