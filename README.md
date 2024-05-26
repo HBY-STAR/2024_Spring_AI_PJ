@@ -23,11 +23,15 @@ Artificial Intelligence A (2024 Spring)
 
 - **相关研究：** 掩码语言模型（MLM）、双向变压器、编码器架构
 
+- **研究概要：** 这篇论文介绍了BERT模型，其通过掩码语言模型和双向变压器的预训练，显著提升了自然语言理解任务的性能。
+
 ### **2. [Improving Language Understanding by Generative Pre-Training (2018)](https://www.semanticscholar.org/paper/Improving-Language-Understanding-by-Generative-Radford-Narasimhan/cd18800a0fe0b668a1cc19f2ec95b5003d0a5035)**
 
 - **科研团队：** Radford and Narasimhan
 
 - **相关研究：** 解码器架构、自回归模型、下一个单词预测、GPT
+
+- **研究概要：** 该研究提出了GPT模型，通过生成预训练方法改善语言理解能力，使用自回归解码器进行下一个单词预测。
 
 ### **3. [BART: Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension (2019)](https://arxiv.org/abs/1910.13461)**
 
@@ -35,11 +39,15 @@ Artificial Intelligence A (2024 Spring)
 
 - **相关研究：** 编码器-解码器架构、去噪预训练、自然语言生成
 
+- **研究概要：** BART模型通过去噪预训练和序列到序列架构，在自然语言生成、翻译和理解任务中表现优异。
+
 ### **4. [Harnessing the Power of LLMs in Practice: A Survey on ChatGPT and Beyond (2023)](https://arxiv.org/abs/2304.13712)**
 
 - **科研团队：** Yang, Jin, Tang, Han, Feng, Jiang, Yin, and Hu
 
 - **相关研究：** LLM架构演变、预训练和微调数据、效率提升
+
+- **研究概要：** 这篇综述文章探讨了大型语言模型（LLM）的架构演变、预训练和微调方法，以及如何提升其效率。
 
 ### **5. [FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness (2022)](https://arxiv.org/abs/2205.14135)**
 
@@ -47,11 +55,15 @@ Artificial Intelligence A (2024 Spring)
 
 - **相关研究：** 快速注意力机制、内存效率、IO感知
 
+- **研究概要：** FlashAttention提出了一种快速且内存高效的注意力机制，通过IO感知优化性能。
+
 ### **6. [Cramming: Training a Language Model on a Single GPU in One Day (2022)](https://arxiv.org/abs/2212.14034)**
 
 - **科研团队：** Geiping and Goldstein
 
 - **相关研究：** 掩码语言模型、单GPU训练、训练效率
+
+- **研究概要：** 该研究展示了如何在单个GPU上使用一天时间训练语言模型，从而显著提高训练效率。
 
 ### **7. [LoRA: Low-Rank Adaptation of Large Language Models (2021)](https://arxiv.org/abs/2106.09685)**
 
@@ -59,11 +71,15 @@ Artificial Intelligence A (2024 Spring)
 
 - **相关研究：** 参数效率、微调、低秩适应
 
+- **研究概要：** LoRA模型通过低秩适应方法，提高了大型语言模型的参数效率和微调效果。
+
 ### **8. [Scaling Down to Scale Up: A Guide to Parameter-Efficient Fine-Tuning (2022)](https://arxiv.org/abs/2303.15647)**
 
 - **科研团队：** Lialin, Deshpande, and Rumshisky
 
 - **相关研究：** 参数高效微调、前缀调整、适配器
+
+- **研究概要：** 本文介绍了参数高效微调方法，包括前缀调整和适配器技术，以优化大型语言模型的性能。
 
 ### **9. [Training Compute-Optimal Large Language Models (2022)](https://arxiv.org/abs/2203.15556)**
 
@@ -71,11 +87,15 @@ Artificial Intelligence A (2024 Spring)
 
 - **相关研究：** Chinchilla模型、生成任务、线性缩放定律
 
+- **研究概要：** 该研究提出了Chinchilla模型，基于计算最优的原则，通过线性缩放定律优化生成任务的性能。
+
 ### **10. [Pythia: A Suite for Analyzing Large Language Models Across Training and Scaling (2023)](https://arxiv.org/abs/2304.01373)**
 
 - **科研团队：** Biderman, Schoelkopf, Anthony, Bradley, O'Brien, Hallahan, Khan, Purohit, Prashanth, Raff, Skowron, Sutawika, and van der Wal
 
 - **相关研究：** LLM套件、训练过程分析、架构改进
+
+- **研究概要：** Pythia是一套用于分析大型语言模型在训练和扩展过程中的工具，帮助研究者改进模型架构。
 
 ### **11. [Training Language Models to Follow Instructions with Human Feedback (2022)](https://arxiv.org/abs/2203.02155)**
 
@@ -83,11 +103,15 @@ Artificial Intelligence A (2024 Spring)
 
 - **相关研究：** 人类反馈、强化学习、InstructGPT
 
+- **研究概要：** 该研究通过人类反馈和强化学习训练语言模型，使其更好地遵循指令，提出了InstructGPT模型。
+
 ### **12. [Constitutional AI: Harmlessness from AI Feedback (2022)](https://arxiv.org/abs/2212.08073)**
 
 - **科研团队：** Yuntao, Saurav, Sandipan, Amanda, Jackson, Jones, Chen, Anna, Mirhoseini, McKinnon, Chen, Olsson, Olah, Hernandez, Drain, Ganguli, Li, Tran-Johnson, Perez, Kerr, Mueller, Ladish, Landau, Ndousse, Lukosuite, Lovitt, Sellitto, Elhage, Schiefer, Mercado, DasSarma, Lasenby, Larson, Ringer, Johnston, Kravec, El Showk, Fort, Lanham, Telleen-Lawton, Conerly, Henighan, Hume, Bowman, Hatfield-Dodds, Mann, Amodei, Joseph, McCandlish, Brown, Kaplan
 
 - **相关研究：** 人工智能对齐、无害系统、自我训练机制
+
+- **研究概要：** Constitutional AI通过人工智能反馈和自我训练机制，确保AI系统的无害性和对齐性。
 
 ### **13. [Self-Instruct: Aligning Language Model with Self Generated Instruction (2022)](https://arxiv.org/abs/2212.10560)**
 
@@ -95,11 +119,15 @@ Artificial Intelligence A (2024 Spring)
 
 - **相关研究：** 自我指导、指令微调、LLM对齐
 
+- **研究概要：** Self-Instruct方法通过自我生成指令对语言模型进行微调，提升模型的对齐能力。
+
 ### **14. [InstructGPT: Aligning Language Models with Human Intent (2022)](https://arxiv.org/abs/2203.02155)**
 
 - **科研团队：** Ouyang, Wu, Jiang, Almeida, Wainwright, Mishkin, Zhang, Agarwal, Slama, Ray, Schulman, Hilton, Kelton, Miller, Simens, Askell, Welinder, Christiano, Leike, Lowe
 
 - **相关研究：** 指令对齐、人类反馈、InstructGPT
+
+- **研究概要：** InstructGPT通过与人类意图对齐和人类反馈训练，使模型更好地理解和执行指令。
 
 ### **15. [LIMA: Less Is More for Alignment (2023)](https://arxiv.org/abs/2305.11206)**
 
@@ -107,11 +135,17 @@ Artificial Intelligence A (2024 Spring)
 
 - **相关研究：** 简化对齐过程、模型效率
 
+- **研究概要：** LIMA
+
+研究了简化对齐过程的方法，提高了模型的效率和效果。
+
 ### **16. [RWKV: Reinventing RNNs for the Transformer Era (2023)](https://arxiv.org/abs/2305.13048)**
 
 - **科研团队：** Peng, Yan, and Chen
 
 - **相关研究：** RNN和Transformer结合、性能优化
+
+- **研究概要：** RWKV模型结合了RNN和Transformer的优点，优化了模型性能。
 
 ### **17. [ResiDual: Transformer with Dual Residual Connections (2023)](https://arxiv.org/abs/2305.14464)**
 
@@ -119,11 +153,15 @@ Artificial Intelligence A (2024 Spring)
 
 - **相关研究：** 残差连接、模型架构创新
 
+- **研究概要：** ResiDual通过双重残差连接的创新架构，提升了Transformer模型的性能。
+
 ### **18. [LLaMA: Open and Efficient Foundation Language Models (2023)](https://arxiv.org/abs/2305.12087)**
 
 - **科研团队：** Touvron, Lavril, Izacard, Martinet, Lachaux, Lacroix, Roziere, Goyal, Hambro, Azhar, Rodriguez, Joulin, Grave, and Lample
 
 - **相关研究：** 开源语言模型、高效架构
+
+- **研究概要：** LLaMA是一个开源且高效的基础语言模型，旨在提升模型性能和效率。
 
 ### **19. [MixReview: Alleviating Memorization in Large Language Models with Active Review (2023)](https://arxiv.org/abs/2305.13872)**
 
@@ -131,11 +169,15 @@ Artificial Intelligence A (2024 Spring)
 
 - **相关研究：** 记忆力减轻、主动复习
 
+- **研究概要：** MixReview通过主动复习机制，减轻了大型语言模型的记忆负担，提升了模型的泛化能力。
+
 ### **20. [Q-LoRA: Efficient Finetuning of Quantized LLMs (2023)](https://arxiv.org/abs/2305.14314)**
 
 - **科研团队：** Dettmers, Pagnoni, Holtzman, and Zettlemoyer
 
 - **相关研究：** 量化、低秩适应、高效微调
+
+- **研究概要：** Q-LoRA提出了一种高效的量化语言模型微调方法，通过低秩适应优化模型性能。
 
 
 ## AI4S Recommendation
