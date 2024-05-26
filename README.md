@@ -17,7 +17,125 @@ Artificial Intelligence A (2024 Spring)
 # Paper Recommendation
 
 ## LM Recommendation
+### **1. [BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding (2018)](https://arxiv.org/abs/1810.04805)**
 
+- **科研团队：** Devlin, Chang, Lee, and Toutanova
+
+- **相关研究：** 掩码语言模型（MLM）、双向变压器、编码器架构
+
+### **2. [Improving Language Understanding by Generative Pre-Training (2018)](https://www.semanticscholar.org/paper/Improving-Language-Understanding-by-Generative-Radford-Narasimhan/cd18800a0fe0b668a1cc19f2ec95b5003d0a5035)**
+
+- **科研团队：** Radford and Narasimhan
+
+- **相关研究：** 解码器架构、自回归模型、下一个单词预测、GPT
+
+### **3. [BART: Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension (2019)](https://arxiv.org/abs/1910.13461)**
+
+- **科研团队：** Lewis, Liu, Goyal, Ghazvininejad, Mohamed, Levy, Stoyanov, and Zettlemoyer
+
+- **相关研究：** 编码器-解码器架构、去噪预训练、自然语言生成
+
+### **4. [Harnessing the Power of LLMs in Practice: A Survey on ChatGPT and Beyond (2023)](https://arxiv.org/abs/2304.13712)**
+
+- **科研团队：** Yang, Jin, Tang, Han, Feng, Jiang, Yin, and Hu
+
+- **相关研究：** LLM架构演变、预训练和微调数据、效率提升
+
+### **5. [FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness (2022)](https://arxiv.org/abs/2205.14135)**
+
+- **科研团队：** Dao, Fu, Ermon, Rudra, and Ré
+
+- **相关研究：** 快速注意力机制、内存效率、IO感知
+
+### **6. [Cramming: Training a Language Model on a Single GPU in One Day (2022)](https://arxiv.org/abs/2212.14034)**
+
+- **科研团队：** Geiping and Goldstein
+
+- **相关研究：** 掩码语言模型、单GPU训练、训练效率
+
+### **7. [LoRA: Low-Rank Adaptation of Large Language Models (2021)](https://arxiv.org/abs/2106.09685)**
+
+- **科研团队：** Hu, Shen, Wallis, Allen-Zhu, Li, L Wang, S Wang, and Chen
+
+- **相关研究：** 参数效率、微调、低秩适应
+
+### **8. [Scaling Down to Scale Up: A Guide to Parameter-Efficient Fine-Tuning (2022)](https://arxiv.org/abs/2303.15647)**
+
+- **科研团队：** Lialin, Deshpande, and Rumshisky
+
+- **相关研究：** 参数高效微调、前缀调整、适配器
+
+### **9. [Training Compute-Optimal Large Language Models (2022)](https://arxiv.org/abs/2203.15556)**
+
+- **科研团队：** Hoffmann, Borgeaud, Mensch, Buchatskaya, Cai, Rutherford, de Las Casas, Hendricks, Welbl, Clark, Hennigan, Noland, Millican, van den Driessche, Damoc, Guy, Osindero, Simonyan, Elsen, Rae, Vinyals, and Sifre
+
+- **相关研究：** Chinchilla模型、生成任务、线性缩放定律
+
+### **10. [Pythia: A Suite for Analyzing Large Language Models Across Training and Scaling (2023)](https://arxiv.org/abs/2304.01373)**
+
+- **科研团队：** Biderman, Schoelkopf, Anthony, Bradley, O'Brien, Hallahan, Khan, Purohit, Prashanth, Raff, Skowron, Sutawika, and van der Wal
+
+- **相关研究：** LLM套件、训练过程分析、架构改进
+
+### **11. [Training Language Models to Follow Instructions with Human Feedback (2022)](https://arxiv.org/abs/2203.02155)**
+
+- **科研团队：** Ouyang, Wu, Jiang, Almeida, Wainwright, Mishkin, Zhang, Agarwal, Slama, Ray, Schulman, Hilton, Kelton, Miller, Simens, Askell, Welinder, Christiano, Leike, and Lowe
+
+- **相关研究：** 人类反馈、强化学习、InstructGPT
+
+### **12. [Constitutional AI: Harmlessness from AI Feedback (2022)](https://arxiv.org/abs/2212.08073)**
+
+- **科研团队：** Yuntao, Saurav, Sandipan, Amanda, Jackson, Jones, Chen, Anna, Mirhoseini, McKinnon, Chen, Olsson, Olah, Hernandez, Drain, Ganguli, Li, Tran-Johnson, Perez, Kerr, Mueller, Ladish, Landau, Ndousse, Lukosuite, Lovitt, Sellitto, Elhage, Schiefer, Mercado, DasSarma, Lasenby, Larson, Ringer, Johnston, Kravec, El Showk, Fort, Lanham, Telleen-Lawton, Conerly, Henighan, Hume, Bowman, Hatfield-Dodds, Mann, Amodei, Joseph, McCandlish, Brown, Kaplan
+
+- **相关研究：** 人工智能对齐、无害系统、自我训练机制
+
+### **13. [Self-Instruct: Aligning Language Model with Self Generated Instruction (2022)](https://arxiv.org/abs/2212.10560)**
+
+- **科研团队：** Wang, Kordi, Mishra, Liu, Smith, Khashabi, and Hajishirzi
+
+- **相关研究：** 自我指导、指令微调、LLM对齐
+
+### **14. [InstructGPT: Aligning Language Models with Human Intent (2022)](https://arxiv.org/abs/2203.02155)**
+
+- **科研团队：** Ouyang, Wu, Jiang, Almeida, Wainwright, Mishkin, Zhang, Agarwal, Slama, Ray, Schulman, Hilton, Kelton, Miller, Simens, Askell, Welinder, Christiano, Leike, Lowe
+
+- **相关研究：** 指令对齐、人类反馈、InstructGPT
+
+### **15. [LIMA: Less Is More for Alignment (2023)](https://arxiv.org/abs/2305.11206)**
+
+- **科研团队：** Zhou, Qiu, Zhou, Zhang, Hsiao, Chung, Le, and Devlin
+
+- **相关研究：** 简化对齐过程、模型效率
+
+### **16. [RWKV: Reinventing RNNs for the Transformer Era (2023)](https://arxiv.org/abs/2305.13048)**
+
+- **科研团队：** Peng, Yan, and Chen
+
+- **相关研究：** RNN和Transformer结合、性能优化
+
+### **17. [ResiDual: Transformer with Dual Residual Connections (2023)](https://arxiv.org/abs/2305.14464)**
+
+- **科研团队：** Yuan, Chan, and Wang
+
+- **相关研究：** 残差连接、模型架构创新
+
+### **18. [LLaMA: Open and Efficient Foundation Language Models (2023)](https://arxiv.org/abs/2305.12087)**
+
+- **科研团队：** Touvron, Lavril, Izacard, Martinet, Lachaux, Lacroix, Roziere, Goyal, Hambro, Azhar, Rodriguez, Joulin, Grave, and Lample
+
+- **相关研究：** 开源语言模型、高效架构
+
+### **19. [MixReview: Alleviating Memorization in Large Language Models with Active Review (2023)](https://arxiv.org/abs/2305.13872)**
+
+- **科研团队：** Lee, Xu, Deshpande, Taylor, Jia, and Zhang
+
+- **相关研究：** 记忆力减轻、主动复习
+
+### **20. [Q-LoRA: Efficient Finetuning of Quantized LLMs (2023)](https://arxiv.org/abs/2305.14314)**
+
+- **科研团队：** Dettmers, Pagnoni, Holtzman, and Zettlemoyer
+
+- **相关研究：** 量化、低秩适应、高效微调
 
 
 ## AI4S Recommendation
