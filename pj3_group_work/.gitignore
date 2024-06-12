@@ -1,0 +1,14 @@
+/dataset/
+/**/__pycache__/
+/model/
+/**/.idea/
+/ans/
+/split_test/
+/CLIP_EBC/clip/_clip/configs/
+/CLIP_EBC/clip/_clip/weights/
+/combined/
+/downsample_combined/
+/expansion_dataset/**
+/split_temp/**
+/*.zip
+/best/*.tar
